@@ -5,8 +5,12 @@ using TMPro;
 
 public class ClaveManager : MonoBehaviour
 {
-    public TMP_InputField inpuClave;
+    public TMP_InputField inputClave;
+    public TMP_InputField inputUsuario;
     public TextMeshProUGUI txtMensaje;
+
+
+    string usuario = "mercho";
     string clave = "tic2025";
     void Start()
     {
@@ -15,11 +19,12 @@ public class ClaveManager : MonoBehaviour
 
     public void ComprobarClaveIngresada()
     {
-        string claveIngresada = inpuClave.text;
-        if (claveIngresada != clave)
+        string claveIngresada = inputClave.text;
+        string usuarioIngresado = inputUsuario.text;
+        if (claveIngresada != clave || usuarioIngresado != usuario)
         {
             txtMensaje.text = "Acceso denegado";
-            inpuClave.text = "";
+            inputClave.text = "";
         }
         else
         {
